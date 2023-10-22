@@ -905,7 +905,7 @@ class SVGPainter(Painter):
                 x=x,
                 y=y,
                 font_size=text_font_size,
-                stroke=text_font_colour,
+                fill=text_font_colour,
                 text_anchor="start",
                 dominant_baseline="hanging",
                 font_family=text_font,
@@ -946,7 +946,7 @@ class SVGPainter(Painter):
             text_anchor="start",
             dominant_baseline="middle",
             font_family=font,
-            stroke=font_colour,
+            fill=font_colour,
         )
         self.elements.append(txt)
 
