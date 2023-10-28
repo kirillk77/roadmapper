@@ -803,10 +803,15 @@ class SVGPainter(Painter):
         )
 
         # Draw the rectangle
-        rectangle = dw.Rectangle(x, y, width, height, fill=box_fill_colour)
+        # Unpack and do some calculations because dw.Rectangle accepts (x, y, w, h), not (x1, y1, x2, y2)
+        bs_x1, bs_y1 = box_shape[0]
+        bs_x2, bs_y2 = box_shape[1]
+        rectangle = dw.Rectangle(bs_x1, bs_y1, bs_x2 - bs_x1, bs_y2 - bs_y1, fill=box_fill_colour)
 
         # Draw the arrowhead
-        poly = dw.Lines(arrowhead_shape, fill=box_fill_colour)
+        # Flatten the list of the shape beacause dw.Lines accepts just a plain list of coordinates (x1, y1, x2, y2, x3, y3, ...)
+        flat_arrowhead_shape = list(sum(arrowhead_shape, ()))
+        poly = dw.Lines(*flat_arrowhead_shape, fill=box_fill_colour)
         self.elements.append(rectangle)
         self.elements.append(poly)
 
