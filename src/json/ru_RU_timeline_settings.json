@@ -1,0 +1,19 @@
+{
+    "locale": "ru_RU.UTF-8",
+    "settings": {
+        "year": {
+            "text": "{0} год",
+            "generic_text": "Год {0}"
+        },
+        "half_year": {"text": "{0} полугодие"},
+        "quarter": {"text": "{0} квартал"},
+        "month": {
+            "text": "{0}",
+            "generic_text": "Мес {0}"
+        },
+        "week": {
+            "text": "{0} {1}",
+            "generic_text": "Нед {0}"
+        }
+    }
+}
